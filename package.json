@@ -1,0 +1,19 @@
+{
+  "name": "gulp-file-structure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jovanidash21/gulp-file-structure.git"
+  },
+  "author": "Jovani Warguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jovanidash21/gulp-file-structure/issues"
+  },
+  "homepage": "https://github.com/jovanidash21/gulp-file-structure#readme"
+}
