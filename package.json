@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jovanidash21/gulp-file-structure/issues"
   },
-  "homepage": "https://github.com/jovanidash21/gulp-file-structure#readme"
+  "homepage": "https://github.com/jovanidash21/gulp-file-structure#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
