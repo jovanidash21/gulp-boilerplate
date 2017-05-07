@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jovanidash21/gulp-file-structure#readme",
   "devDependencies": {
+    "asset-builder": "^1.1.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-gh-pages": "^0.5.4",
