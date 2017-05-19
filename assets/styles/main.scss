@@ -7,7 +7,11 @@
 // Bower SCSS
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
 
-// User plugins
-@import 'common/common';
-@import 'components/components';
-@import 'partials/partials';
+// User common SCSS
+@import "common/";
+
+// User components SCSS
+@import "components/";
+
+// User partials SCSS
+@import "partials/";
