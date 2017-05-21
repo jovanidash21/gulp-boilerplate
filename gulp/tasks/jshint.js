@@ -1,15 +1,12 @@
 var gulp = require('gulp');
-var scriptsConfig = require('../config').scripts;
-var jshint = require('gulp-jshint');
-var debug = require('gulp-debug');
-var concat = require('gulp-concat');
+var plugins = require('gulp-load-plugins')();
+var config = require('../config');
 
 gulp.task('jshint', function() {
-  return gulp.src(scriptsConfig.src)
-    .pipe(jshint('.jshintrc'))
-    .pipe(debug({title: 'jshint:'}))
-    .pipe(concat('main.js'))
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.jshint.reporter('fail'));
+    return gulp.src(config.scripts.proj)
+        .pipe(plugins.jshint('.jshintrc'))
+        .pipe(plugins.debug({title: 'jshint:'}))
+        .pipe(plugins.jshint())
+        .pipe(plugins.jshint.reporter('jshint-stylish'))
+        .pipe(plugins.jshint.reporter('fail'));
 });
