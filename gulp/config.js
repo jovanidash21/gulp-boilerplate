@@ -39,5 +39,15 @@ module.exports = {
         globs: globs.fonts,
         src: assets + 'fonts',
         dest: dist + 'fonts'
+    },
+    images: {
+        settings: {
+            progressive: true,
+            interlaced: true,
+            svgoPlugins: [{removeUnknownsAndDefaults: false}]
+        },
+        globs: globs.images,
+        src: assets + 'images',
+        dest: dist + 'images'
     }
 };
