@@ -11,7 +11,6 @@ var revManifest = dist + 'assets.json';
 
 module.exports = {
     enabled: {
-        rev: argvProduction,
         maps: false,
         failStylesTask: argvProduction
     },
@@ -33,7 +32,7 @@ module.exports = {
     },
     scripts: {
         proj: project.js,
-        src: assets + "/scripts/**/*.js",
-        dest: dist + "/scripts"
+        src: assets + 'scripts',
+        dest: dist + 'scripts'
     }
 };
