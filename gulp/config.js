@@ -19,7 +19,7 @@ module.exports = {
     dist: dist,
     manifestConfig: config,
     revManifest: revManifest,
-    styles:
+    styles: {
         settings: {
             outputStyle: 'nested',
             precision: 10,
