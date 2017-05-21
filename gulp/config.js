@@ -34,5 +34,10 @@ module.exports = {
         proj: project.js,
         src: assets + 'scripts',
         dest: dist + 'scripts'
+    },
+    fonts: {
+        globs: globs.fonts,
+        src: assets + 'fonts',
+        dest: dist + 'fonts'
     }
 };
