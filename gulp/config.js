@@ -1,4 +1,5 @@
 var argv = require('yargs').argv;
+var argvProduction = argv.production;
 var manifest = require('asset-builder')('./assets/manifest.json');
 var path = manifest.paths;
 var assets = path.source;
@@ -10,15 +11,22 @@ var revManifest = dist + 'assets.json';
 
 module.exports = {
     enabled: {
-        rev: argv.production,
+        rev: argvProduction,
         maps: false,
-        failStyleTask: argv.production
+        failStylesTask: argvProduction
     },
     manifest: manifest,
     assets: assets,
     dist: dist,
+    manifestConfig: config,
     revManifest: revManifest,
-    styles: {
+    styles:
+        settings: {
+            outputStyle: 'nested',
+            precision: 10,
+            includePaths: ['.'],
+            errLogToConsole: !argvProduction
+        },
         proj: project.css,
         src: assets + 'styles',
         dest: dist + 'styles'
