@@ -24,7 +24,7 @@ module.exports = {
         dest: dist + 'styles'
     },
     scripts: {
-        proj: project.js
+        proj: project.js,
         src: assets + "/scripts/**/*.js",
         dest: dist + "/scripts"
     }
