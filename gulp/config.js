@@ -1,5 +1,9 @@
 var argv = require('yargs').argv;
 var argvProduction = argv.production;
+var browserSync = require('browser-sync');
+var gulp = require('gulp');
+var plugins = require('gulp-load-plugins')({camelize: true});
+var lazypipe = require('lazypipe');
 var manifest = require('asset-builder')('./assets/manifest.json');
 var path = manifest.paths;
 var assets = path.source;
@@ -8,6 +12,19 @@ var config = manifest.config || {};
 var globs = manifest.globs;
 var project = manifest.getProjectGlobs();
 var revManifest = dist + 'assets.json';
+
+var writeToManifest = function(directory) {
+    return lazypipe()
+        .pipe(gulp.dest, dist + directory)
+        .pipe(function() {
+            return plugins.if('**/*.{js,css}', browserSync.reload({stream:true}));
+        })
+        .pipe(plugins.rev.manifest, revManifest, {
+            base: dist,
+            merge: true
+        })
+        .pipe(gulp.dest, dist)();
+};
 
 module.exports = {
     enabled: {
@@ -18,7 +35,7 @@ module.exports = {
     assets: assets,
     dist: dist,
     manifestConfig: config,
-    revManifest: revManifest,
+    writeToManifest: writeToManifest,
     styles: {
         settings: {
             outputStyle: 'nested',
