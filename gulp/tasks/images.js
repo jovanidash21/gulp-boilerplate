@@ -5,7 +5,7 @@ var handleErrors = require('../util/handleErrors');
 
 gulp.task('images', function() {
     return gulp.src(config.images.globs)
-        .pipe(plugins.imagemin(config.images.settings))
+        .pipe(plugins.cache(plugins.imagemin(config.images.settings)))
         .on('error', handleErrors)
         .pipe(plugins.debug({title: 'images:'}))
         .pipe(gulp.dest(config.images.dest));

@@ -42,8 +42,9 @@ module.exports = {
     },
     images: {
         settings: {
-            progressive: true,
             interlaced: true,
+            optimizationLevel: 5,
+            progressive: true,
             svgoPlugins: [{removeUnknownsAndDefaults: false}]
         },
         globs: globs.images,
