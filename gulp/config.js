@@ -29,7 +29,9 @@ var writeToManifest = function(directory) {
 module.exports = {
     enabled: {
         maps: false,
-        failStylesTask: argvProduction
+        failStylesTask: argvProduction,
+        failJSHintTask: argvProduction,
+        stripJSDebug: argvProduction
     },
     manifest: manifest,
     assets: assets,
