@@ -1,26 +1,56 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var stylesConfig  = require('../config').styles;
+var plugins = require('gulp-load-plugins')({camelize: true});
+var config  = require('../config');
 var handleErrors = require('../util/handleErrors');
-var sourcemaps   = require('gulp-sourcemaps');
-var cssnano = require('gulp-cssnano');
-var rename = require("gulp-rename");
-var autoprefixer = require('gulp-autoprefixer');
+var lazypipe = require('lazypipe');
+var merge = require('merge-stream');
 var browserSync  = require('browser-sync');
-var debug = require('gulp-debug');
 
-gulp.task('styles', function () {
-  return gulp.src(stylesConfig.src)
-    .pipe(sass(stylesConfig.settings))
-    .on('error', handleErrors)
-    .pipe(debug({title: 'styles:'}))
-    .pipe(sourcemaps.init())
-    .pipe(sourcemaps.write())
-    .pipe(cssnano())
-    .pipe(rename(stylesConfig.dest + '.css.min'))
-    .pipe(autoprefixer("last 4 versions", "> 1%"))
-    .pipe(gulp.dest(stylesConfig.dest))
-    .pipe(browserSync.reload({
-        stream:true
-    }));
+var cssTasks = function(filename) {
+    return lazypipe()
+        .pipe(function() {
+            return plugins.if(!config.enabled.failStyleTask, plugins.plumber());
+        })
+        .pipe(function() {
+            return plugins.if(config.enabled.maps, plugins.sourcemaps.init());
+        })
+            .pipe(function() {
+                return plugins.if('*.scss', plugins.sass(config.styles.settings));
+            })
+            .pipe(plugins.concat, filename)
+            .pipe(plugins.autoprefixer, {
+                browsers: [
+                    'last 2 versions',
+                    'ie 8',
+                    'ie 9',
+                    'android 2.3',
+                    'android 4',
+                    'opera 12'
+                ]
+            })
+            .pipe(plugins.cssnano, ({discardComments: {removeAll: true}}))
+            .pipe(plugins.rename, ({
+                suffix: ".min",
+                extname: ".css"
+            }))
+        .pipe(function() {
+            return plugins.if(config.enabled.maps, plugins.sourcemaps.write('.', {
+                sourceRoot: config.styles.src
+            }));
+      })();
+};
+
+gulp.task('styles', ['wiredep'], function() {
+    var merged = merge();
+        config.manifest.forEachDependency('css', function(dep) {
+            var cssTasksInstance = cssTasks(dep.name);
+            if (!config.enabled.failStyleTask) {
+                cssTasksInstance.on('error', handleErrors)
+                .pipe(plugins.debug({title: 'styles:'}))
+            }
+            merged.add(gulp.src(dep.globs, {base: 'styles'})
+                .pipe(cssTasksInstance));
+        });
+        return merged
+            .pipe(config.writeToManifest('styles'));
 });
