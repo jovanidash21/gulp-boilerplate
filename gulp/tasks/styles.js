@@ -4,7 +4,6 @@ var config  = require('../config');
 var handleErrors = require('../util/handleErrors');
 var lazypipe = require('lazypipe');
 var merge = require('merge-stream');
-var browserSync  = require('browser-sync');
 
 var cssTasks = function(filename) {
     return lazypipe()
