@@ -1,21 +1,38 @@
 var gulp = require('gulp');
-var scriptsConfig = require('../config').scripts;
-var jshint = require('gulp-jshint');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
-var browserSync = require('browser-sync');
+var plugins = require('gulp-load-plugins')({camelize: true});
+var config  = require('../config');
+var handleErrors = require('../util/handleErrors');
+var lazypipe = require('lazypipe');
+var merge = require('merge-stream');
 
-gulp.task('scripts', function() {
-  return gulp.src(scriptsConfig.src)
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'))
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest(scriptsConfig.dest))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .pipe(gulp.dest(scriptsConfig.dest))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
+var jsTasks = function (filename) {
+    return lazypipe()
+        .pipe(function () {
+            return plugins.if(config.enabled.maps, plugins.sourcemaps.init());
+        })
+            .pipe(plugins.concat, filename)
+            .pipe(plugins.uglify, {
+                compress: {
+                    'drop_debugger': config.enabled.stripJSDebug
+                }
+            })
+        .pipe(function () {
+            return plugins.if(config.enabled.maps, plugins.sourcemaps.write('.', {
+                sourceRoot: config.scripts.src
+            }));
+        })();
+};
+
+gulp.task('scripts', ['jshint'], function () {
+    var merged = merge();
+    config.manifest.forEachDependency('js', function (dep) {
+        merged.add(
+            gulp.src(dep.globs, {base: 'scripts'})
+                .pipe(jsTasks(dep.name))
+                .on('error', handleErrors)
+                .pipe(plugins.debug({title: 'scripts:'}))
+        );
+    });
+    return merged
+        .pipe(config.writeToManifest('scripts'));
 });
