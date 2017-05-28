@@ -8,7 +8,6 @@
     "debug": false,
     "devel": true,
     "dojo": false,
-    "ender": true,
     "eqeqeq": true,
     "eqnull": false,
     "es5": true,
