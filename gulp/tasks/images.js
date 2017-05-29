@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')({camelize: true});
-var config  = require('../config');
+var config = require('../config');
 var handleErrors = require('../util/handleErrors');
 
 gulp.task('images', function() {
