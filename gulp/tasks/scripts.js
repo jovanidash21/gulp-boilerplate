@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')({camelize: true});
-var config  = require('../config');
+var config = require('../config');
 var handleErrors = require('../util/handleErrors');
 var lazypipe = require('lazypipe');
 var merge = require('merge-stream');
@@ -16,6 +16,10 @@ var jsTasks = function (filename) {
                     'drop_debugger': config.enabled.stripJSDebug
                 }
             })
+            .pipe(plugins.rename, ({
+                suffix: ".min",
+                extname: ".js"
+            }))
         .pipe(function () {
             return plugins.if(config.enabled.maps, plugins.sourcemaps.write('.', {
                 sourceRoot: config.scripts.src
