@@ -38,6 +38,10 @@ module.exports = {
     dist: dist,
     manifestConfig: config,
     writeToManifest: writeToManifest,
+    views: {
+        src: assets + 'views/*.pug',
+        dest: dist
+    },
     styles: {
         settings: {
             outputStyle: 'nested',
