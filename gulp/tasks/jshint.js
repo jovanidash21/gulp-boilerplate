@@ -3,7 +3,8 @@ var plugins = require('gulp-load-plugins')({camelize: true});
 var config = require('../config');
 
 gulp.task('jshint', function() {
-    return gulp.src(config.scripts.proj)
+    return gulp.src(['bower.json']
+        .concat(config.scripts.proj))
         .pipe(plugins.jshint('.jshintrc'))
         .pipe(plugins.debug({title: 'jshint:'}))
         .pipe(plugins.jshint())
