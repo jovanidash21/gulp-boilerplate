@@ -1,5 +1,10 @@
 # Gulp File Structure
 
+## Screenshot
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jovanidash21/gulp-file-structure/master/screenshot.png">
+</p>
+
 ## Prerequisite
 * [Node.js](https://nodejs.org/en/) installed.
 * [Bower](https://bower.io/) installed.
