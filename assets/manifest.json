@@ -23,5 +23,8 @@
     "modernizr.js": {
       "bower": ["modernizr"]
     }
+  },
+  "config": {
+    "devUrl": "http://localhost:9000"
   }
 }

@@ -27,6 +27,7 @@ var writeToManifest = function(directory) {
 };
 
 module.exports = {
+    devUrl: config.devUrl,
     enabled: {
         maps: false,
         failStylesTask: argvProduction,
@@ -36,7 +37,6 @@ module.exports = {
     manifest: manifest,
     assets: assets,
     dist: dist,
-    manifestConfig: config,
     writeToManifest: writeToManifest,
     views: {
         src: assets + 'views/*.pug',
