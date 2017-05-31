@@ -9,6 +9,6 @@ gulp.task('fonts', function() {
         .pipe(plugins.flatten())
         .on('error', handleErrors)
         .pipe(plugins.debug({title: 'fonts:'}))
-        .pipe(gulp.dest(config.fonts.dest));
+        .pipe(gulp.dest(config.fonts.dest))
         .pipe(browserSync.stream());
 });

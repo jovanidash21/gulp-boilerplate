@@ -9,6 +9,6 @@ gulp.task('images', function() {
         .pipe(plugins.cache(plugins.imagemin(config.images.settings)))
         .on('error', handleErrors)
         .pipe(plugins.debug({title: 'images:'}))
-        .pipe(gulp.dest(config.images.dest));
+        .pipe(gulp.dest(config.images.dest))
         .pipe(browserSync.stream());
 });
