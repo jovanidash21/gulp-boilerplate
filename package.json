@@ -1,5 +1,5 @@
 {
-  "name": "gulp-file-structure",
+  "name": "gulp-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jovanidash21/gulp-file-structure.git"
+    "url": "git+https://github.com/jovanidash21/gulp-boilerplate.git"
   },
   "author": "Jovani Warguez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jovanidash21/gulp-file-structure/issues"
+    "url": "https://github.com/jovanidash21/gulp-boilerplate/issues"
   },
-  "homepage": "https://github.com/jovanidash21/gulp-file-structure#readme",
+  "homepage": "https://github.com/jovanidash21/gulp-boilerplate#readme",
   "devDependencies": {
     "asset-builder": "^1.1.0",
     "browser-sync": "^2.18.8",

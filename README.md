@@ -1,8 +1,8 @@
-# Gulp File Structure
+# Gulp Boilerplate
 
 ## Screenshot
 <p align="center">
-  <img src="https://raw.githubusercontent.com/jovanidash21/gulp-file-structure/master/screenshot.png">
+  <img src="https://raw.githubusercontent.com/jovanidash21/gulp-boilerplate/master/screenshot.png">
 </p>
 
 ## Prerequisite
@@ -13,11 +13,11 @@
 ## Installation
 * Clone or download this repository.
 ```
-git clone https://github.com/jovanidash21/gulp-file-structure.git
+git clone https://github.com/jovanidash21/gulp-boilerplate.git
 ```
 * Navigate to the project directory.
 ```
-cd gulp-file-structure
+cd gulp-boilerplate
 ```
 * Install node modules.
 ```
