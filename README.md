@@ -34,6 +34,7 @@ gulp
 * ```gulp fonts``` - outputs all fonts in a flattened directory structure.
 * ```gulp images``` - minify all images.
 * ```gulp views``` - compile all Pug templates into HTML.
+* ```gulp views --production``` - compile all Pug templates into HTML for production.
 * ```gulp wiredep``` - inject SCSS bower dependencies automatically.
 * ```gulp styles``` - compiles, combines, and optimizes Bower CSS and project CSS.
 * ```gulp styles --production``` - compiles, combines, and optimizes bower CSS and project CSS for production.
