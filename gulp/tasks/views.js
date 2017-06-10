@@ -9,5 +9,5 @@ gulp.task('views', function buildHTML() {
         .on('error', handleErrors)
         .pipe(plugins.debug({title: 'views:'}))
         .pipe(plugins.stripComments())
-    .pipe(gulp.dest(config.views.dest));
+        .pipe(gulp.dest(config.views.dest));
 });
