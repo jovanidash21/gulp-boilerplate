@@ -30,6 +30,7 @@ gulp
 
 ## Gulp Tasks
 * ```gulp``` - clean all the dist directory files and run all build tasks.
+* ```gulp --production``` - clean all the dist directory files and run all build tasks for production.
 * ```gulp clean``` - clean all the dist directory files.
 * ```gulp fonts``` - outputs all fonts in a flattened directory structure.
 * ```gulp images``` - minify all images.
