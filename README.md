@@ -27,6 +27,10 @@ bower install
 gulp
 ```
 * Open with a browser the ```index.html``` inside the ```dist``` directory.
+* Run in dev mode.
+```
+gulp watch
+```
 
 ## Gulp Tasks
 * ```gulp``` - clean all the dist directory files and run all build tasks.
