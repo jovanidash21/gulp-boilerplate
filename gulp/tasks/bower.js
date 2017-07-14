@@ -4,7 +4,7 @@ var config = require('../config');
 var handleErrors = require('../util/handleErrors');
 var wiredep = require('wiredep').stream;
 
-gulp.task('wiredep', function() {
+gulp.task('bower', function() {
     return gulp.src(config.styles.proj)
         .pipe(wiredep())
         .on('error', handleErrors)
