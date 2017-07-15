@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')({camelize: true});
 var config = require('../config');
 
-gulp.task('jshint', function() {
+gulp.task('lint', function() {
     return gulp.src(['bower.json']
         .concat(config.scripts.proj))
         .pipe(plugins.jshint('.jshintrc'))
