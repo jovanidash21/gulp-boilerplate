@@ -43,7 +43,7 @@ gulp watch
 * ```gulp bower``` - inject bower dependencies automatically.
 * ```gulp styles``` - compiles, combines, and optimizes Bower CSS and project CSS.
 * ```gulp styles --production``` - compiles, combines, and optimizes bower CSS and project CSS for production.
-* ```gulp jshint``` -  lints configuration JSON and project JS.
+* ```gulp lint``` -  lints configuration JSON and project JS.
 * ```gulp scripts``` -  compiles, combines, and optimizes bower JS and project JS.
 * ```gulp scripts --production``` - compiles, combines, and optimizes bower JS and project JS for production.
 * ```gulp build``` - run all build tasks.
