@@ -40,7 +40,7 @@ gulp watch
 * ```gulp images``` - minify all images.
 * ```gulp views``` - compile all Pug templates into HTML.
 * ```gulp views --production``` - compile all Pug templates into HTML for production.
-* ```gulp bower``` - inject bower dependencies automatically.
+* ```gulp bower``` - inject SCSS bower dependencies automatically.
 * ```gulp styles``` - compiles, combines, and optimizes Bower CSS and project CSS.
 * ```gulp styles --production``` - compiles, combines, and optimizes bower CSS and project CSS for production.
 * ```gulp lint``` -  lints configuration JSON and project JS.

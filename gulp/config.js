@@ -47,6 +47,13 @@ module.exports = {
             includePaths: ['.'],
             errLogToConsole: !argvProduction
         },
+        wiredepSettings: {
+            directory: './bower_components',
+            exclude: [
+                'animatewithsass',
+                'bootstrap-sass'
+            ],
+        },
         proj: project.css,
         src: assets + 'styles',
         dest: dist + 'styles'
