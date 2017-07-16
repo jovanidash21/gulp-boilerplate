@@ -24,9 +24,9 @@
     "mocha": "^3.3.0"
   },
   "overrides": {
-    "bootstrap-sass": {
+    "bootstrap": {
       "main": [
-        "assets/javascripts/bootstrap.js"
+        "dist/js/bootstrap.js"
       ]
     },
     "flag-icon-css": {

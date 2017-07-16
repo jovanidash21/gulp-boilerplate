@@ -20,7 +20,7 @@
     "vendor.js": {
       "bower": [
         "jquery",
-        "bootstrap-sass"
+        "bootstrap"
       ]
     }
   },

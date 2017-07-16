@@ -1,9 +1,10 @@
 // User variables
 @import "common/variables";
+@import "common/override-variables";
 
 // Core variables and mixins
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../../bower_components/bootstrap/scss/variables";
+@import "../../bower_components/bootstrap/scss/mixins";
 
 // Common SCSS
 @import "common/variables";

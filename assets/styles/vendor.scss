@@ -1,9 +1,9 @@
+// Vendor SCSS
+@import "vendor/animate";
+@import "vendor/bootstrap";
+
 // Inject bower dependencies automatically via wiredep (do'nt edit this block)
 // bower:scss
 @import "../../bower_components/flag-icon-css/sass/_flag-icon.scss";
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
-
-// Vendor SCSS
-@import "vendor/animate";
-@import "vendor/bootstrap";
