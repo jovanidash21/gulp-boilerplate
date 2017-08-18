@@ -1,10 +1,13 @@
 {
   "name": "gulp-boilerplate",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "author": "Jovani Warguez",
-  "license": "ISC",
-  "homepage": "",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jovanidash21/gulp-boilerplate.git"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
