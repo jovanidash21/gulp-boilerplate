@@ -1,21 +1,19 @@
 {
   "name": "gulp-boilerplate",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "private": true,
+  "author": "Jovani Warguez",
+  "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jovanidash21/gulp-boilerplate.git"
+    "url": "https://github.com/jovanidash21/gulp-boilerplate.git"
   },
-  "author": "Jovani Warguez",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jovanidash21/gulp-boilerplate/issues"
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp --production",
+    "dev": "gulp watch"
   },
-  "homepage": "https://github.com/jovanidash21/gulp-boilerplate#readme",
   "devDependencies": {
     "asset-builder": "^1.1.0",
     "bower": "^1.8.0",
