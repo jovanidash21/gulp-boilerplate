@@ -56,3 +56,6 @@ npm run dev
 * ```npm start``` - start the project.
 * ```npm run build``` - run the project in production mode.
 * ```npm run dev``` - run the project in dev mode.
+
+## License
+Licensed under [MIT](https://opensource.org/licenses/mit-license.php).
